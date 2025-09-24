@@ -66,4 +66,5 @@ else:
 
 print(f"Study Hours: {study_hours}")
 print(f"Social Points: {social_points}")
+
 print(f"Stress Level: {stress_level}")
