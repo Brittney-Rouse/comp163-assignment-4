@@ -116,24 +116,28 @@ if user_answer == "Yes":
         if team_formation == "Yes":
             print("Alright! Get out there and fight!")
             final_check = True
+            team_check = True
         else:
             print("A solo adventurer? Well, that won't be a problem for you. Good luck!")
             final_check = True
+            team_check = False
     elif (current_gpa >= 2.0) and  (study_hours >= 30) and (social_points >= 35):
         print("Alright! You're a solid fighter, so this world won't be very difficult for you.")
         team_formation = input("Would you like to form a team? Yes / No   ")
         if team_formation == "Yes":
             print("Nice! Go get some buddies and fight!!")
             final_check = True
+            team_check = True
         else:
             print("Are you sure? Teammates are always better in a situation like this. Either way, good luck!")
             final_check = True
+            team_check = False
     else:
         print("Well, you might want to train more first! At this rate, you'll get destroyed your first day out!")
         final_check = True
 elif user_answer == "No":
     if (current_gpa >= 3.0) and (study_hours >= 40) and (social_points >= 55):
-        print("Oh... Are you sure? We could really use you out there! You're a powerhouse")
+        print("Oh... Are you sure? We could really use you out there! You're a powerhouse!")
         second_choice = input("Are you sure you don't want to go on the quest? Yes / No   ")
         if second_choice == "Yes":
             print("Oh. Okay then. Have fun not saving the world...")
@@ -145,12 +149,14 @@ elif user_answer == "No":
             if team_formation == "Yes":
                 print("Alright! Get out there and fight!")
                 final_check = True
+                team_check = True
             else:
                 print("A solo adventurer? Well, that won't be a problem for you. Good luck!")
                 final_check = True
+                team_check = False
     elif (current_gpa >= 2.0) and (study_hours >= 30) and (social_points >= 35):
         print("Oh... Are you sure? We could really use you out there! You're a powerhouse!")
-        second_choice = input("Are you sure? Yes / No   ")
+        second_choice = input("Are you sure you don't want to go on the quest? Yes / No   ")
         if second_choice == "Yes":
             print("Really? But you'd be so good out there...")
             final_check = True
@@ -161,9 +167,11 @@ elif user_answer == "No":
             if team_formation == "Yes":
                 print("Nice! Go get some buddies and fight!!")
                 final_check = True
+                team_check = True
             else:
                 print("Are you sure? Teammates are always better in a situation like this. Either way, good luck!")
                 final_check = True
+                team_check = False
     else:
         print("Well, that's alright. You seem like you need more training anyway! We'll check back up on you in a year or so. Good luck out there!")
         final_check = True
@@ -180,5 +188,9 @@ if final_check is True:
     print(f"Study Hours: {study_hours}")
     print(f"Social Points: {social_points}")
     print(f"Stress Level: {stress_level}")
+    if team_check is True:
+        print("Teammates : Aquired")
+    elif team_check is False:
+        print("Teammates : None")
 elif final_check is not True:
     print("Try again.")
